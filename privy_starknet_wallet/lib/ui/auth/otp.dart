@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../utils/privy_instance.dart';
 
+import '../../storage/write.dart';
+
 import '../dapp.dart';
 
 class EnterOTP extends StatefulWidget {
@@ -26,10 +28,17 @@ class _EnterOTPState extends State<EnterOTP> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Privy Starknet Flutter Wallet Demo.',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: .center,
           children: [
+            Text('Enter OTP'),
             SizedBox(
               width: 240,
               child: TextFormField(
@@ -51,7 +60,9 @@ class _EnterOTPState extends State<EnterOTP> {
                 );
 
                 response.fold(
-                  onSuccess: (_) {
+                  onSuccess: (_) async {
+                    await writeValue('email', widget.userEmail);
+
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
@@ -64,16 +75,6 @@ class _EnterOTPState extends State<EnterOTP> {
                     print(error.message);
                   },
                 );
-
-                // verifyOTP(widget.userEmail, otpFieldController.text).then((
-                //   onValue,
-                // ) {
-                //   String otpValue = onValue.toString();
-
-                //   print('verifyOTP: $otpValue');
-                // });
-
-                // Move Dapp
               },
             ),
           ],

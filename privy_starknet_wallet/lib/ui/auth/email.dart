@@ -25,10 +25,17 @@ class _EnterEmailState extends State<EnterEmail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Privy Starknet Flutter Wallet Demo.',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: .center,
           children: [
+            Text('Enter Email'),
             SizedBox(
               width: 240,
               child: TextFormField(
