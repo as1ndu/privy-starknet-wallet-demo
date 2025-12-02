@@ -12,6 +12,7 @@ Backend for Starknet Privy Wallet Demo with Flutter client
     - [API end points](#api-end-points)
       - [Variable definitions](#variable-definitions)
       - [End points](#end-points)
+  - [Todo:](#todo)
 
 ### Installation
 
@@ -77,3 +78,7 @@ API end points that the Flutter app will be making calls to, in order to access 
 - `GET` - `/increase-counter/:walletId`, Make `increase` contract call from  `walletId` to counter contract address
 
 - `GET` - `/decrease-counter/:walletId`, Make `decrease` contract call from  `walletId` to counter contract address
+
+## Todo:
+
+- [ ] Secure Access of server via Auth tokens from client's flutter app

@@ -74,3 +74,7 @@ final result = await provider.call(
     blockId: BlockId.latest,
   );
 ```
+
+## Todo
+
+- [ ] Improve error handling
