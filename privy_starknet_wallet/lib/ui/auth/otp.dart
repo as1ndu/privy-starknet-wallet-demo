@@ -29,6 +29,7 @@ class _EnterOTPState extends State<EnterOTP> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
           'Privy Starknet Flutter Wallet Demo.',
           style: TextStyle(fontWeight: FontWeight.bold),
